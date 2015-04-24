@@ -1,6 +1,6 @@
 ## Constructor function to cache a matrix inverse to memory 
 ## to speed up processing
-makeCacheMatrix <- function(x = matrix(1:4,2,2)) {
+makeCacheMatrix <- function(x = matrix()) {
     
     ## Clear the object first
     m <- NULL
