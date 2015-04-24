@@ -12,12 +12,14 @@ makeCacheMatrix <- function(x = matrix(1:4,2,2)) {
       m <<- NULL
     }
     get <- function() x
-    ## set the values for the inverse matrix
+    
+    ## calculate the values for the inverse matrix
     set_inverse <- function(solve) m <<- solve
     
-    ## retrieve the cached values for the inverse matrix
+    ## cache values for the inverse matrix
     get_inverse <- function() m
-    ## 
+    
+    ## list of functions to be used by cacheSolve()  
     list(set = set, get = get,
          set_inverse = set_inverse,
          get_inverse = get_inverse)
