@@ -1,24 +1,24 @@
 ## Function designed to return the inverse of a matrix from cache
-## to to calculate it
+## or to calculate it
 cacheSolve <- function(x, ...) {
     
     ## Check to see if there is data in the cache  
-    m <- x$get_inverse()
-    if(!is.null(m)) {
+    answer <- x$get_inverse()
+    if(!is.null(answer)) {
       message("Getting cached data...")
     
       ## return the inverse matrix from cache 
-      return(m)
+      return(answer)
     }
     ## implicit Else - (i.e. Else no data in cache)
-    data <- x$get_inverse()
+    data <- x$get_matrix()
   
     ## Calculate the inverse for the matrix 
-    m <- solve(data, ...)
+    answer <- solve(data, ...)
   
     ## Write the inverse data to the cache
-    x$set_inverse(m)
+    x$set_inverse(answer)
   
     ## return the calculated inverse matrix
-    m
+    answer
 }
