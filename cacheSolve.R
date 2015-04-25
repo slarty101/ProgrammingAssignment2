@@ -7,10 +7,10 @@ cacheSolve <- function(x, ...) {
     if(!is.null(answer)) {
       message("Getting cached data...")
     
-      ## return the inverse matrix from cache 
+      ## return the inverse matrix from cache if it exists 
       return(answer)
     }
-    ## implicit Else - (i.e. Else no data in cache)
+    ## implicit Else - (i.e. Else no data in cache so caclulate it)
     data <- x$get_matrix()
   
     ## Calculate the inverse for the matrix 
